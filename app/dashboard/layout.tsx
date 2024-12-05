@@ -18,7 +18,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { signOut } from '../utils/auth';
 import prisma from '../utils/db';
-// import { redirect } from 'next/navigation';
+import { redirect } from 'next/navigation';
 import { Toaster } from '@/components/ui/sonner';
 
 async function getUser(userId: string) {
@@ -33,9 +33,9 @@ async function getUser(userId: string) {
     },
   });
 
-  //   if (!data?.firstName || !data.lastName || !data.address) {
-  //     redirect('/onboarding');
-  //   }
+  if (!data?.firstName || !data.lastName || !data.address) {
+    redirect('/onboarding');
+  }
 }
 
 export default async function DashboardLayout({
