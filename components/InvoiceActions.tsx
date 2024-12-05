@@ -1,13 +1,12 @@
 'use client';
 
-import Link from 'next/link';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu';
+} from '@/components/ui/dropdown-menu';
 import {
   CheckCircle,
   DownloadCloudIcon,
@@ -16,13 +15,30 @@ import {
   Pencil,
   Trash,
 } from 'lucide-react';
+import Link from 'next/link';
+import { toast } from 'sonner';
 
 interface iAppProps {
   id: string;
   status: string;
 }
-
 export function InvoiceActions({ id, status }: iAppProps) {
+  const handleSendReminder = () => {
+    toast.promise(
+      fetch(`/api/email/${id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }),
+      {
+        loading: 'Sending reminder email...',
+        success: 'Reminder email sent successfully',
+        error: 'Failed to send reminder email',
+      },
+    );
+  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -41,7 +57,7 @@ export function InvoiceActions({ id, status }: iAppProps) {
             <DownloadCloudIcon className="size-4 mr-2" /> Download Invoice
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={handleSendReminder}>
           <Mail className="size-4 mr-2" /> Reminder Email
         </DropdownMenuItem>
         <DropdownMenuItem asChild>

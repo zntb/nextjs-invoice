@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["Authjs", "datasource", "Shadcn", "sonner", "turbopack"]
+  "cSpell.words": [
+    "Authjs",
+    "cuid",
+    "datasource",
+    "Shadcn",
+    "sonner",
+    "turbopack"
+  ]
 }
