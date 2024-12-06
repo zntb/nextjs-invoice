@@ -12,3 +12,4 @@ Zod: <https://zod.dev/>
 Conform: <https://conform.guide/>
 Authjs: <https://authjs.dev/>
 Background: <https://ui.ibelick.com/>
+JsPDF: <https://github.com/parallax/jsPDF>
