@@ -22,6 +22,7 @@ interface iAppProps {
   id: string;
   status: string;
 }
+
 export function InvoiceActions({ id, status }: iAppProps) {
   const handleSendReminder = () => {
     toast.promise(

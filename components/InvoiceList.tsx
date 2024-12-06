@@ -34,9 +34,11 @@ async function getData(userId: string) {
 
   return data;
 }
+
 export async function InvoiceList() {
   const session = await requireUser();
   const data = await getData(session.user?.id as string);
+
   return (
     <>
       {data.length === 0 ? (
