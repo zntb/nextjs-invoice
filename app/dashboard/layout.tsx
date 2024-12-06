@@ -44,8 +44,9 @@ export default async function DashboardLayout({
   children: ReactNode;
 }) {
   const session = await requireUser();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const data = await getUser(session.user?.id as string);
-  console.log(data);
+
   return (
     <>
       <div className="grid min-h-screen w-full md:gird-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">

@@ -13,3 +13,4 @@ Conform: <https://conform.guide/>
 Authjs: <https://authjs.dev/>
 Background: <https://ui.ibelick.com/>
 JsPDF: <https://github.com/parallax/jsPDF>
+RainbowButton: <https://magicui.design/docs/components/rainbow-button>

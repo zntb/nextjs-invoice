@@ -3,6 +3,7 @@
     "Authjs",
     "cuid",
     "datasource",
+    "paidinvoices",
     "Shadcn",
     "sonner",
     "turbopack"
