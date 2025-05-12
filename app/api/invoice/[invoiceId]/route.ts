@@ -134,8 +134,11 @@ export async function GET(
   // generate pdf as buffer
   const pdfBuffer = Buffer.from(pdf.output('arraybuffer'));
 
+  // convert Buffer to Uint8Array
+  const pdfUint8Array = new Uint8Array(pdfBuffer);
+
   // return pdf as download
-  return new NextResponse(pdfBuffer, {
+  return new NextResponse(pdfUint8Array, {
     headers: {
       'Content-Type': 'application/pdf',
       'Content-Disposition': 'inline',
